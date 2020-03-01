@@ -1,0 +1,28 @@
+<h3>Student Details<a style="margin-left:90mm;" class="btn btn-secondary" href="/student"><i class="fa fa-plus"></i>  Add New Student</a></h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Student ID</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.firstName}}</td>
+            <td>{{this.lastName}}</td>
+            <td>{{this.studentID}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>
+                <a style="margin-right: 5mm;" href="/student/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/student/delete/{{this._id}}" onclick="return confirm('Delete Student Record?')"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
